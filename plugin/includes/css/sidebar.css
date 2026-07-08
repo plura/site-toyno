@@ -1,0 +1,23 @@
+/*.p-sidebar:not(.p-sidebar-init) {
+	display: none;
+}*/
+
+
+.p-sidebar {
+	
+	--w: 300px;
+
+	--w-toggle: 50px;
+
+	height: 100vh;
+	left: calc( -1 * var(--w) + var(--w-toggle) );
+	position: fixed !important;
+	top: 0;
+	transition: left .5s ease-out;
+	z-index: 99999;
+}
+
+
+.p-sidebar.on {
+	left: 0;
+}

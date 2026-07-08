@@ -1,0 +1,142 @@
+:root {
+
+    --p-mosaic-h: 100vh;
+    --p-mosaic-w: 100%;
+
+    --p-mosaic-drag-slider-h: 30px;
+    --p-mosaic-drag-slider-w: 100px;
+    --p-mosaic-drag-slider-color: black;
+
+}
+
+
+
+.p-mosaic {
+    height: var(--p-mosaic-h);
+}
+
+
+.p-mosaic-item {
+    height: var(--p-mosaic-h);
+    left: 0;
+    position: absolute !important;
+    right: 0;
+    z-index: auto;
+}
+
+
+.p-mosaic[data-mosaic-mobile-layout="0"] {
+
+    --xpx: calc( 1px * var(--x) );
+    --ypx: calc( 1px * var(--y) );
+
+}
+
+
+
+
+/* 3 cols -> 1 col + 2 col */
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="3"] .p-mosaic-item[data-mosaic-index="0"] {
+    clip-path: polygon(0 0, 100% 0, 100% var(--ypx), 0 var(--ypx) );
+}
+
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="3"] .p-mosaic-item[data-mosaic-index="1"] {
+    clip-path: polygon(0 var(--ypx), var(--xpx) var(--ypx), var(--xpx) 100%, 0 100% );
+}
+
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="3"] .p-mosaic-item[data-mosaic-index="2"] {
+    clip-path: polygon(var(--xpx) var(--ypx), 100% var(--ypx), 100% 100%, var(--xpx) 100% );
+}
+
+
+
+
+/* 4 cols -> 2 col x 2 */
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="4"] .p-mosaic-item[data-mosaic-index="0"] {
+    clip-path: polygon(0 0, var(--xpx) 0, var(--xpx) var(--ypx), 0 var(--ypx) );
+}
+
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="4"] .p-mosaic-item[data-mosaic-index="1"] {
+    clip-path: polygon(var(--xpx) 0, 100% 0, 100% var(--ypx), var(--xpx) var(--ypx) );
+}
+
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="4"] .p-mosaic-item[data-mosaic-index="2"] {
+    clip-path: polygon(0 var(--ypx), var(--xpx) var(--ypx), var(--xpx) 100%, 0 100% );
+}
+
+.p-mosaic[data-mosaic-mobile-layout="0"][data-mosaic-total="4"] .p-mosaic-item[data-mosaic-index="3"] {
+    clip-path: polygon(var(--xpx) var(--ypx), 100% var(--ypx), 100% 100%, var(--xpx) 100% );
+}
+
+
+.p-mosaic[data-mosaic-mobile-layout="0"] .p-mosaic-drag-slider {
+    display: none;
+}
+
+
+
+
+/* MOBILE */
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] {
+
+    --ch: calc( var(--p-mosaic-h) / var(--mosaic-total) );
+
+}
+
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-item {
+
+    --s0-h: 0px;
+    --s1-h: 0px;    
+
+    --y0: calc( var(--p-mosaic-index) * var(--ch) );
+    --y1: calc( var(--y0) + var(--ch) );
+
+    --n0: calc( var(--y0) + var( --s0-h ) / 2 );
+    --n1: calc( var(--y1) + var( --s1-h ) / 2 );
+
+    clip-path: polygon(0 var(--n0), 100% var(--n0), 100% var(--n1), 0 var(--n1) );
+
+}
+
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-item.has-drag-slider[data-mosaic-index="0"] {
+    --s1-h: var(--p-mosaic-drag-slider0-h);
+    --y0: 0;
+    --y1: var(--p-mosaic-drag-slider0-y);
+}
+
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-item.has-drag-slider[data-mosaic-index="1"] {
+    --s0-h: var(--p-mosaic-drag-slider0-h);
+    --s1-h: var(--p-mosaic-drag-slider1-h);
+    --y0: var(--p-mosaic-drag-slider0-y);
+    --y1: var(--p-mosaic-drag-slider1-y);   
+}
+
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-item.has-drag-slider[data-mosaic-index="2"] {
+    --s0-h: var(--p-mosaic-drag-slider1-h);
+    --y0: var(--p-mosaic-drag-slider1-y);
+    --y1: 100%;
+}
+
+
+
+/* drag slider */
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-drag-slider {
+
+    height: var(--p-mosaic-drag-slider-h);
+    background-color: var(--p-mosaic-drag-slider-color);
+    width: var(--p-mosaic-drag-slider-w);
+
+    position: absolute;
+    left: calc( ( 100% - var(--p-mosaic-drag-slider-w) ) / 2 );
+    top: calc( var(--ch) * ( var(--p-mosaic-index) + 1 ) - var(--p-mosaic-drag-slider-h) / 2 );
+    z-index: 999;
+
+}
+
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-drag-slider[data-mosaic-index="0"] {
+    background-color: red;
+}
+
+.p-mosaic[data-mosaic-mobile="1"][data-mosaic-mobile-layout="1"] .p-mosaic-drag-slider[data-mosaic-index="1"] {
+    background-color: blue;
+}

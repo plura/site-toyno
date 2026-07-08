@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-04-25 23:38+0100\n"
+"PO-Revision-Date: 2023-04-25 23:39+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../includes\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.css, *.js\n"
+
+#: core.php:35
+msgid "Back"
+msgstr ""
+
+#: lang.php:7
+msgid "Read More"
+msgstr "Ler Mais"
+
+#: team.php:132
+msgid "Team"
+msgstr "Equipa"
+
+#: team.php:136
+msgid "Partners"
+msgstr "Parceiros"
+
+#: works.php:297 works.php:299
+msgid "Case Study"
+msgstr ""
+
+#: workshops.php:11
+msgid "Current Workshops"
+msgstr "Workshops a Decorrer"
+
+#: workshops.php:12
+msgid "Previous Workshops"
+msgstr "Workshops Anteriores"
+
+#: workshops.php:13
+msgid "Future Workshops"
+msgstr "Workshops Futuras"
+
+#: workshops.php:120
+msgid "l, j \\d\\e F Y"
+msgstr ""
+
+#: workshops.php:154
+msgid "Speakers"
+msgstr ""

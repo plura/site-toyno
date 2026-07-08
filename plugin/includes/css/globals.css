@@ -1,0 +1,326 @@
+:root {
+	--toyno-gap: 30px;
+	--toyno-globals-colors-grey: #efefef;
+}
+
+
+/**
+ * - Fancybox - fix
+ * - Menu
+ * - Posts
+ * - Works
+ * - Team
+ */
+
+
+
+/* Fix: Fancybox */
+.fancybox__container {
+	z-index: 999999;
+}
+
+
+
+/* MENU */
+.menu-item.wpml-ls-item > a > span[data-lang-code] {
+    font-size: 0;
+    line-height: 0;
+}
+
+.menu-item.wpml-ls-item > a > span[data-lang-code]::before {
+    content: attr(data-lang-code);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+/* Posts  */
+.toyno-posts {
+	--n: 1;
+	display: grid;
+	gap: calc( var(--toyno-gap) * 3 );
+	grid-template-columns: repeat( var(--n), 1fr );
+}
+
+@media (min-width: 768px) {
+	.toyno-posts {
+		--n: 2;
+	}
+}
+
+@media (min-width: 768px) {
+	.toyno-posts {
+		--n: 3;
+	}
+}
+
+
+
+
+/* WORKS */
+.toyno-works-grid .toyno-work {
+	/*aspect-ratio: 4 / 3;
+	border: 1px solid #000;*/
+}
+
+
+.toyno-works-grid .toyno-work .toyno-work-featured-img {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.toyno-works-grid .toyno-work .toyno-work-info {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	line-height: initial;
+	padding: calc( var(--toyno-gap) / 3 );
+	position: absolute;
+	justify-content: center;
+	top: 0;
+	width: 100%;
+	z-index: auto;
+}
+
+.toyno-works-grid .toyno-work .toyno-work-info .toyno-work-meta {
+	display: contents;
+}
+
+.toyno-works-grid .toyno-work .toyno-work-info .toyno-work-meta .toyno-work-meta-field {
+	text-align: center;
+}
+
+
+.toyno-works-grid.has-item-hover .toyno-work {
+	overflow: hidden;
+}
+
+.toyno-works-grid.has-item-hover .toyno-work .toyno-work-info {
+	opacity: 1;
+	/*transition: opacity .5s ease-out, top .5s ease-out;*/
+}
+
+.toyno-works-grid.has-item-hover .toyno-work:not(:hover) .toyno-work-info {
+	opacity: 0;
+	top: 100%;
+}
+
+
+
+
+.toyno-works-grid .toyno-work .toyno-work-title {
+	padding-bottom: 0;
+	text-align: center;
+}
+
+
+.toyno-works-grid .toyno-work .toyno-work-meta .toyno-work-meta_field:not(:last-child) {
+	margin-top: calc( var(--gap) / 4 );
+}
+
+
+/* FILTERED */
+.toyno-works.filtered .toyno-works-grid .toyno-work.on {
+	border-color: red;
+}
+
+
+@media (min-width: 768px) {
+
+	.toyno-works-grid .toyno-work .toyno-work-info {
+		padding: calc( var(--toyno-gap) / 2 );
+	}
+
+}
+
+
+
+
+
+
+
+/* TEAM */
+.toyno-team-members {
+	--n: 1;
+	display: grid;
+	grid-gap: var(--gap);
+	grid-template-columns: repeat( var(--n), 1fr);
+}
+
+.toyno-team-members::before {
+	content: attr(data-label);
+	 grid-column: span var(--n);
+}
+
+
+/*.toyno-team-members*/ .toyno-team-member {
+	--gap: var(--toyno-gap);
+}
+
+/*.toyno-team-members*/ .toyno-team-member .toyno-team-member-img,
+/*.toyno-team-members*/ .toyno-team-member:not(.has-featured-img)::before {
+	aspect-ratio: 4/5;
+	display: block;
+	margin-bottom: calc( var(--gap) / 2);
+}
+
+/*.toyno-team-members*/ .toyno-team-member .toyno-team-member-img {
+	object-fit: cover;
+}
+
+/*.toyno-team-members*/ .toyno-team-member:not(.has-featured-img)::before {
+	background-color: var(--toyno-globals-colors-grey);
+	content: '';
+}
+
+
+
+.toyno-team-member[data-partner="1"] .toyno-team-member-img,
+.toyno-team-member[data-partner="1"]:not(.has-featured-img)::before {
+	aspect-ratio: 4/3;
+}
+
+.toyno-team-member[data-partner="1"] .toyno-team-member-img {
+	object-fit: contain;
+}
+
+
+/* bio */
+/*.toyno-team-members */.toyno-team-member .toyno-team-member-bio em:first-of-type {
+	font-style: normal;
+}
+
+.toyno-team-members .toyno-team-member .toyno-team-member-bio.init {
+	overflow: hidden;
+	transition: height .5s ease-out;
+}
+
+
+.toyno-team-members .toyno-team-member .toyno-team-member-bio.init:not(.on) {
+	height: var(--off);	
+}
+
+.toyno-team-members .toyno-team-member .toyno-team-member-bio.init.on {
+	height: var(--on);
+}
+
+.toyno-team-members .toyno-team-member .toyno-team-member-bio.init p {
+	color: rgba(0,0,0,0);
+	transition: color .5s ease-out;
+}
+
+.toyno-team-members .toyno-team-member .toyno-team-member-bio.init.on p {
+	color: black;
+	transition: color .5s ease-out;
+}
+
+.toyno-team-members .toyno-team-member .toyno-team-member-bio.init p em {
+	color: rgba(0, 0, 0, 1);
+}
+
+@media (min-width: 768px) {
+
+	.toyno-team-members {
+		--n: 2;
+		--gap: var(--toyno-gap);
+	}
+
+}
+
+@media (min-width: 991px) {
+
+	.toyno-team-members {
+		--n: 3;
+		--gap: calc( var(--toyno-gap) * 2 );
+	}
+
+}
+
+@media (min-width: 1440px) {
+
+	.toyno-team-members {
+		--n: 4;
+	}
+
+}
+
+
+/* WORKSHOP */
+.toyno-workshops .toyno-workhops-group:not(:last-child) {
+	margin-bottom: var(--toyno-gap); 
+}
+
+.toyno-workshops .toyno-workhops-group[data-label]::before {
+	content: attr( data-label );
+	display: block;
+	margin-bottom: calc( var(--toyno-gap) / 3 );
+}
+
+.toyno-workshops .toyno-workhops-group .toyno-workshop .toyno-workshop-meta::before {
+	content: attr( data-date-start ) ' - ' attr( data-date-end );
+	display: block;
+}
+
+
+
+/* WORKSHOP - MEMBERS */
+.single-toyno_workshop .toyno-workshop-popup {
+	display: none;
+	max-width: 500px;
+}
+
+
+.single-toyno_workshop .toyno-team-members::before {
+    content: attr(data-label);
+}
+
+.single-toyno_workshop .toyno-team-members .toyno-team-member .toyno-team-member-img,
+.single-toyno_workshop .toyno-team-members .toyno-team-member:not(.has-featured-img)::before {
+	aspect-ratio: 1/1;
+}
+
+.single-toyno_workshop .toyno-team-members .toyno-team-member .toyno-team-member-info {
+	align-items: center;
+}
+
+.single-toyno_workshop .toyno-team-members .toyno-team-member .toyno-team-member-info .toyno-team-member-name,
+.single-toyno_workshop .toyno-team-members .toyno-team-member .toyno-team-member-info .toyno-team-member-meta .toyno-team-member-meta-field[data-type="position"] {
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+
+	.single-toyno_workshop .toyno-team-members {
+		--n: 1;
+		--gap: calc( var(--toyno-gap) / 2 );
+	}
+
+}
+
+@media (min-width: 991px) {
+
+	.single-toyno_workshop .toyno-team-members {
+		--n: 1;
+		--gap: calc( var(--toyno-gap) / 2 );		
+	}
+
+}
+
+@media (min-width: 1440px) {
+
+	.single-toyno_workshop .toyno-team-members {
+		--n: 2;
+	}
+
+	.single-toyno_workshop .toyno-team-members::before {
+	    grid-column: span 2;
+	}
+
+}

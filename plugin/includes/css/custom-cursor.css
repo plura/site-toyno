@@ -1,0 +1,29 @@
+.p-custom-cursor {
+	pointer-events: none;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+
+.p-custom-cursor::after {
+	height: 100%;
+	left: calc( var(--x) * 1px);
+	width: 1px;
+}
+
+.p-custom-cursor::before {
+	height: 1px;
+	top: calc( var(--y) * 1px);
+	width: 100%;
+}
+
+.p-custom-cursor::after,
+.p-custom-cursor::before {
+	content: '';
+	background-color: black;
+	position: absolute;
+}

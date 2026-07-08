@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Toyno — Theme",
+        "context": "theme",
+        "host": "",
+        "protocol": "ftp",
+        "port": 21,
+        "username": "",
+        "password": "",
+        "remotePath": "/public_html/wp-content/themes/Divi-child",
+        "uploadOnSave": false,
+        "useTempFile": false,
+        "openSsh": false,
+        "syncMode": "update",
+        "syncOption": {
+            "delete": true
+        }
+    },
+    {
+        "name": "Toyno — Plugin",
+        "context": "plugin",
+        "host": "",
+        "protocol": "ftp",
+        "port": 21,
+        "username": "",
+        "password": "",
+        "remotePath": "/public_html/wp-content/plugins/toyno",
+        "uploadOnSave": false,
+        "useTempFile": false,
+        "openSsh": false,
+        "syncMode": "update",
+        "syncOption": {
+            "delete": true
+        }
+    }
+]

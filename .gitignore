@@ -1,0 +1,12 @@
+# SFTP credentials
+.vscode/sftp.json
+!.vscode/sftp.json.example
+
+# Full WP install / legacy files (kept locally, not tracked)
+old/
+wp/
+placeholder.html
+readme-sidebar.txt
+readme.txt
+sftp-config.json
+text.php

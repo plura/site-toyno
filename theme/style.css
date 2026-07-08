@@ -1,0 +1,208 @@
+/*
+ Theme Name:     Plura Custom Divi Theme
+ Theme URI:      http://plura.pt/
+ Description:    Plura Custom Divi Theme
+ Author:         Plura
+ Author URI:     http://plura.pt
+ Template:       Divi
+ Version:        1.0.0
+*/
+ 
+ 
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+
+
+/* MENU */
+
+
+
+/* SIDEBAR  */
+#toyno-sidebar:not(.p-sidebar) {
+    display: none;
+}
+
+#toyno-sidebar .et_pb_text {
+    font-size: var(--toyno-globals-font-size-xbody);
+    line-height: var(--toyno-globals-font-line-height-xbody);
+}
+
+
+
+
+/* ABOUT  */
+:is(.page-id-10, .wpmlobj-id-10) .et_section_specialty .et_pb_specialty_column .et_pb_row_inner {
+    padding-bottom: 0;
+}
+
+:is(.page-id-10, .wpmlobj-id-10) .et_section_specialty .et_pb_specialty_column .et_pb_row_inner:not(:last-child) .et_pb_column {
+    --n: 40px;
+
+    border-bottom: 1px solid black;
+    margin-bottom: calc( var(--n) / 2 );
+    padding-bottom: calc( var(--n) / 2 );
+}
+
+@media (max-width: 767px) {
+
+    :is(.page-id-10, .wpmlobj-id-10) .et_section_specialty > .et_pb_row {
+        max-width: var(--toyno-globals-w) !important;
+        width: var(--toyno-globals-w) !important;
+    }
+
+}
+
+
+
+
+
+/* WORKS */
+.grid-filter-group {
+    border: none;
+}
+
+
+.toyno-works-grid .toyno-work {
+    background-color: var(--toyno-globals-colors-lightgrey);
+}
+
+.toyno-works-grid .toyno-work .toyno-work-info {
+    background-color: rgba(255, 255, 255, 1);
+    top: 0 !important;
+    transition: opacity .5s ease-out;
+}
+
+.toyno-works-grid .toyno-work .toyno-work-info {
+    align-items: flex-start;
+    justify-content: flex-start;   
+}
+
+.toyno-works-grid .toyno-work .toyno-work-info .toyno-work-title {
+    font-size: var(--toyno-globals-font-size-xsmall);
+    line-height: var(--toyno-globals-font-line-height-xsmall);
+    text-align: left;
+}
+
+.toyno-works-grid .toyno-work .toyno-work-meta {
+    font-size: var(--toyno-globals-font-size-xxsmall);
+    line-height: var(--toyno-globals-font-line-height-xxsmall);   
+}
+
+@media (min-width: 991px) {
+
+	.toyno-works-grid .toyno-work .toyno-work-info .toyno-work-title {
+	    font-size: var(--toyno-globals-font-size-small);
+	    line-height: var(--toyno-globals-font-line-height-small);
+	}
+
+	.toyno-works-grid .toyno-work .toyno-work-info .toyno-work-meta {
+	    font-size: var(--toyno-globals-font-size-xsmall);
+		line-height: var(--toyno-globals-font-line-height-xsmall);   
+	}
+
+
+}
+
+
+
+/* WORK */
+.toyno-work-gallery {
+    --gap: 30px;
+}
+
+.toyno-work-gallery img.toyno-work-gallery-media {
+    display: block;
+}
+
+.toyno-work-gallery .toyno-work-gallery-media:not(:last-child) {
+    margin-bottom: var(--gap);
+}
+
+
+
+/* SPACE BETWEEN US */
+body.wpmlobj-id-747:is(.toyno-env1, .toyno-env2, .toyno-env3, .toyno-env4) {
+    background-color: white !important; /*var(--toyno-globals-colors-env0) !important;*/
+}
+
+
+
+/* TEAM */
+@media (min-width: 768px)  {
+
+    .wpmlobj-id-16 .toyno-team-members .toyno-team-member .toyno-team-member-meta.has-meta-position:not(.has-meta-social-media) {
+        margin-bottom: 65px;
+    }
+
+}
+
+
+
+
+/* CLIENTS */
+.wpmlobj-id-1582 .wp-block-gallery {
+    --n: 2;
+    --gap: 0px;
+    gap: var(--gap) !important;
+}
+
+.wpmlobj-id-1582 .wp-block-gallery figure.wp-block-image {
+    flex-grow: unset;
+    width: calc( ( 100% - ( var(--gap) * ( var(--n) - 1 ) ) ) / var(--n) ) !important;
+}
+
+@media (min-width: 768px) {
+
+    .wpmlobj-id-1582 .wp-block-gallery {
+        --n: 3;
+    }
+
+}
+
+@media (min-width: 991px) {
+
+    .wpmlobj-id-1582 .wp-block-gallery {
+        --n: 4;
+    }
+
+}
+
+@media (min-width: 1600px) {
+
+    .wpmlobj-id-1582 .wp-block-gallery {
+        --n: 5;
+    }
+
+}
+
+/* CLIENTS [OLD]  */
+:is(.page-id-456, .wpmlobj-id-456) .wp-block-gallery.has-nested-images {
+    gap: 25px;
+    justify-content: space-evenly;
+}
+
+:is(.page-id-456, .wpmlobj-id-456) .wp-block-gallery.has-nested-images figure.wp-block-image {
+    display: contents;
+}
+   
+:is(.page-id-456, .wpmlobj-id-456) .wp-block-gallery.has-nested-images figure.wp-block-image img {
+    max-height: 75px;
+    max-width: 150px !important;
+    object-fit: contain;
+}
+
+@media (min-width: 991px) {
+
+	:is(.page-id-456, .wpmlobj-id-456) .wp-block-gallery.has-nested-images {
+	    gap: 50px;
+	}
+
+	:is(.page-id-456, .wpmlobj-id-456) .wp-block-gallery.has-nested-images figure.wp-block-image img {
+	    max-height: 100;
+	    max-width: 200px !important;
+	    object-fit: contain;
+	}
+
+}
+

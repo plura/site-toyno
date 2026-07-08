@@ -1,0 +1,39 @@
+.dynamic-grid .grid-items {
+	--s: 1s;
+	--grid-gap: 15px;
+	--grid-item-ratio: 1 / 1;
+	--w: calc( ( var(--grid-w) - ( var(--grid-cols) - 1 ) * var(--grid-gap) ) / var(--grid-cols) );
+	--h: calc( var(--w) / ( var(--grid-item-ratio) ) );
+
+	height: calc( var(--h) * var(--grid-rows) + var(--grid-gap) * ( var(--grid-rows) - 1 ) );
+	position: relative;
+	transition: height var(--s) ease-out;
+}
+
+.dynamic-grid .grid-items .grid-item {
+	aspect-ratio: var(--grid-item-ratio);
+	opacity: 0;
+	left: calc( var(--x) * ( var(--w) + var(--grid-gap) ) );
+	position: absolute;
+	transition: visibility 0s linear var(--s), opacity var(--s) ease-out, left var(--s) ease-out, top var(--s) ease-out;
+	top: calc( var(--y) * ( var(--h) + var(--grid-gap) ) );
+	visibility: hidden;
+	width: var(--w);
+	z-index: auto;
+}
+
+.dynamic-grid .grid-items .grid-item.on {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+
+@media (min-width: 991px) {
+
+	.dynamic-grid .grid-items {
+		--grid-gap: 20px;
+		--grid-item-ratio: 4 / 3;	
+	}
+
+}
